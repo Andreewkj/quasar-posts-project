@@ -37,5 +37,11 @@ npm run format
 quasar build
 ```
 
+
+## Screen
+
+![home posts](https://github.com/Andreewkj/quasar-posts-project/assets/62602623/db18c11e-d4da-46a9-abb6-656e244c2119)
+
+
 ### Customize the configuration
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
