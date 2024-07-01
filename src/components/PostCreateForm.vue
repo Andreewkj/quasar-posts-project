@@ -6,6 +6,7 @@
             @reset="onReset"
             class="q-gutter-md"
         >
+
         <q-input
             filled
             v-model="form.title"
@@ -14,6 +15,7 @@
             lazy-rules
             :rules="[ val => val && val.length > 0 || 'Type your Title']"
         />
+
         <q-input
             filled
             v-model="form.description"
@@ -22,6 +24,7 @@
             lazy-rules
             :rules="[ val => val && val.length > 0 || 'You can not be brilhant with 0 chars.']"
         />
+        
         <q-toggle
             label="Draft"
             checked-icon="check"
@@ -29,8 +32,6 @@
             unchecked-icon="clear"
             v-model="form.draft"
         />
-
-        <q-input type="file" v-model="form.image" id="myfile" class="form-control" />
 
         <div>
             <q-btn label="Submit" type="submit" color="primary"/>
@@ -48,11 +49,9 @@ const form = reactive({
     title: '',
     description: '',
     draft: false,
-    image: null
 });
 
 function onReset() {
-    form.image       = null,
     form.title       = '',
     form.description = '',
     form.draft       = false
@@ -60,10 +59,7 @@ function onReset() {
 
 async function onSubmit(){
   try {
-    form.image = document.getElementById('myfile').files[0];
-    console.log(form);
     const {data} = await http.post('api/posts/create', form)
-    console.log(data);
   } catch (error) {
     console.log(error);
   }

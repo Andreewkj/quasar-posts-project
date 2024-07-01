@@ -19,7 +19,8 @@
       <q-separator />
 
       <q-card-actions class="justify-around">
-          <q-btn flat round color="red" icon="favorite" />
+          <q-btn flat round :color="post.draft? 'blue': 'grey'" icon="save" class="text-capitalize"> draft </q-btn>
+
           <q-btn flat round color="accent" icon="bookmark" />
           <q-btn flat round color="primary" icon="share" />
         </q-card-actions>
